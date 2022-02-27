@@ -17,10 +17,10 @@ jobs:
         run: mvn clean test || true # don't fail because we don't want students to receive workflow failure emails, if some tests fail.
       - name: Inspect surefire files
         if: always() # even if there are failing tests, we want to output and send surefire reports to ccclassroom app.
-        run: cat target/surefire-reports/*.txt
+        run: cat target/surefire-reports/*.txt || true
       - name: Add permission to cc.sh in .github folder
         if: always()
         run: chmod +x ./.github/cc.sh
       - name: Send test data to CCClassRoom
         if: always()
-        run: ./.github/cc.sh
+        run: ./.github/cc.sh || true
