@@ -1,8 +1,8 @@
-Készítsünk egy programot amivel nyilván lehet tartani, hogy egy repülőtérre milyen repülők száltak le.
+Készítsünk egy programot amivel nyilván lehet tartani, hogy egy repülőtérre milyen repülők szálltak le.
 
 # Adatbázis
 
-Az adatbázis egy táblából áll amelynek neve `airplanes_landed`. A tábla következő oszlopokal rendelkezik:
+Az adatbázis egy táblából áll amelynek neve `airplanes_landed`. A tábla következő oszlopokkal rendelkezik:
 
 - captain VARCHAR(255)
 - co_pilot VARCHAR(255)
@@ -27,7 +27,7 @@ Az `AirportAdministrator` osztály konstruktora a következő paraméterekkel re
 - `String dbUser` felhasználónév amivel csatlakozhatunk az adatbázishoz.
 - `String dbPassword`  A `dbUser`-hez tartozó jelszó.
 
-Készítsd el a `AirportAdministrator` osztály `getUniquePlanes` metódusát! Abban az esetben ha az adatbázis üres a metódus térjen vissza egy üres `String` listával. Egyéb esetben a a metódus térjen vissza egy `String` listában az összes a reptérre leszált repülő tipusának nevével ABC szerinti csökennő sorrendben. Egy repülőtípus csak egyszer szerepeljen függetlenül attol hányszor szált le az adott típusú repülőgép a reptérre.
+Készítsd el a `AirportAdministrator` osztály `getUniquePlanes` metódusát! Abban az esetben ha az adatbázis üres a metódus térjen vissza egy üres `String` listával. Egyéb esetben a a metódus térjen vissza egy `String` listában az összes a reptérre leszállt repülő típusának nevével ABC szerinti csökennő sorrendben. Egy repülőtípus csak egyszer szerepeljen függetlenül attol hányszor szállt le az adott típusú repülőgép a reptérre.
 
 A megoldáshoz használj `PreparedStatement`-et!
 
@@ -133,14 +133,3 @@ A feladat 0 pontot ér, bármely alábbi esetben:
 - teszteset sem fut le sikeresen
 - ha a forráskód olvashatatlan, nem felel meg a konvencióknak, nem követi a clean code alapelveket
 - ha kielégíti a teszteseteket, de a szöveges követelményeknek nem felel meg
-
-Clean code-ra adható pontok: max 10
-
-tesztekre adható pontok:
-
-| Teszt | Pont |
---- | ----
-test_getUniqueAirplanes_allAirplanesOnce_anyOrder | 2.5 pont
-test_getUniquePlanes_allPlanesOnce_alphabeticOrder| 2.5 pont
-test_geUniqueBirds_oneDuplicate_anyOrder          | 2.5 pont
-test_getUniquePlanes_emptyDatabase                | 2.5 pont
